@@ -7,23 +7,64 @@
 body{
     font-family: "Poppins", serif;
 }
-.navbar{
+.navbar {
     display: flex;
-    align-items:center;
-    padding:20px;
+    align-items: center;
+    padding: 20px;
 }
-nav{
-    flex:1;
+
+nav {
+    flex: 1;
     text-align: right;
 }
-nav ul{
-    display:inline-block;
-    list-style-type:none;
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-nav ul li{
-    display:inline-block;
-    margin-right:20px;
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
 }
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Underline effect on hover */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff523b; /* Red highlight */
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Optional: change color on hover */
+nav ul li a:hover {
+    cursor: pointer;
+}
+
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
 a{
     text-decoration: none;
     color:#555;
